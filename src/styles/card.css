@@ -1,0 +1,9 @@
+.corazon:hover i{
+    color:black !important;
+}
+
+.image {
+    height: 275px;
+    object-fit: cover;
+    object-position: top;
+}
