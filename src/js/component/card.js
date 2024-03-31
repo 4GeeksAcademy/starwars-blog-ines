@@ -5,7 +5,7 @@ import "../../styles/card.css";
 
 export const Card = (props) => {
     const {store, actions}= useContext(Context)
-    const isFavorite = store.favoritos.includes(props.item.name);
+    const isFavorite = store.favorites.includes(props.item.name);
     const category = props.category === "people" ? "characters" :
                      props.category === "planets" ? "planets" :
                      props.category === "vehicles" ? "vehicles" : "";
@@ -24,26 +24,26 @@ noImageUrl = "https://starwars-visualguide.com/assets/img/big-placeholder.jpg"
             <div className="card-body">
                 <h5 className="card-title">{props.item.name}</h5>
                 <p className="card-text mb-0"> {
-                    props.category == "people" ? "Gender: " : /* + props.item.gender : */
-                    props.category == "planets" ? "Population: " : /* + props.item.population : */
-                    props.category == "vehicles" ? "Cargo Capacity: " : "" /* + props.item.cargo_capacity : "" */
+                    props.category == "people" ? "Gender: " : 
+                    props.category == "planets" ? "Population: " : 
+                    props.category == "vehicles" ? "Cargo Capacity: " : "" 
                  }</p>
                 <p className="card-text mb-0"> {
-                    props.category == "people" ? "Hair color: " : /* + props.item.hair_color : */
-                    props.category == "planets" ? "Terrain: " : /* + props.item.terrain : */
-                    props.category == "vehicles" ? "Consumables: " : "" /* + props.item.consumables : "" */    
+                    props.category == "people" ? "Hair color: " : 
+                    props.category == "planets" ? "Terrain: " : 
+                    props.category == "vehicles" ? "Consumables: " : ""    
                 }</p>
                 <p className="card-text"> {
-                    props.category == "people" ? "Eye-Color: " : /* + props.item.eye_color : */
-                    props.category == "planets" ? "Climate: " : /* + props.item.climate : */
-                    props.category == "vehicles" ? "Crew: " : "" /* + props.item.crew : "" */ 
+                    props.category == "people" ? "Eye-Color: " : 
+                    props.category == "planets" ? "Climate: " : 
+                    props.category == "vehicles" ? "Crew: " : "" 
                 }</p>
                 <div className="d-flex justify-content-between">
                     <Link to={`/details/${props.category}/${props.item.uid}`}>
                         <button className="btn text-primary border-primary">Learn More!</button>
                     </Link>
                     
-                    <button className={`corazon btn btn-outline-warning`} onClick={() => actions.favoritos(props.item.name)}>
+                    <button className={`corazon btn btn-outline-warning`} onClick={() => actions.favorites(props.item.name)}>
                         <i className={`fa-heart ${isFavorite ? "fas text-warning" : "far"}`}></i>
                     </button>
                     

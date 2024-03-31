@@ -14,12 +14,12 @@ export const Navbar = () => {
 				<li className="nav dropdown me-5">
 					<a className=" d-flex nav-link dropdown-toggle text-white bg-primary rounded align-items-center" href="#" role="button" data-bs-toggle="dropdown">
 						Favorites
-						<span className="bg-secondary px-2 ms-1" style={{borderRadius:"30px"}}>{store.favoritos.length}</span>
+						<span className="bg-secondary px-2 ms-1" style={{borderRadius:"30px"}}>{store.favorites.length}</span>
 					</a>
 					<ul className="dropdown-menu">
-						{store.favoritos.length === 0 
+						{store.favorites.length === 0 
 							? <li className="text-center">(empty)</li>
-							: store.favoritos.map((item, index) => (
+							: store.favorites.map((item, index) => (
 								<li key={index} className="d-flex justify-content-between text-primary">
 									{item}
 									<button onClick={() => actions.removeFav(item)} className="btn p-0 px-1">

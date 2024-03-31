@@ -6,7 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				planets: [],
 				vehicles: [],
 				details: {},
-				favoritos: []
+				favorites: []
 		},
 		actions: {
 			getCharacters: () => {
@@ -45,19 +45,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.catch((error) => console.log(error))
 			},
 			addFav: (name) => {
-				let listadeFav = getStore().favoritos
-				let nuevoFav = name
-				let nuevaListaDeFav = listadeFav.concat(nuevoFav) 
-				setStore({favoritos : nuevaListaDeFav})
+				let listFav = getStore().favorites
+				let newFav = name
+				let newListFav = listFav.concat(newFav) 
+				setStore({favorites : newListFav})
 			},
 			removeFav: (name) => {
-				let listadeFav = getStore().favoritos
-				let nuevaListaDeFav = listadeFav.filter((item)=> name !== item )
-				setStore({favoritos : nuevaListaDeFav})
+				let listFav = getStore().favorites
+				let newListFav = listFav.filter((item)=> name !== item )
+				setStore({favorites : newListFav})
 			},
-			favoritos:(name) => {
-				let favNames = getStore().favoritos
-				if (getStore().favoritos.length == 0) {
+			favorites:(name) => {
+				let favNames = getStore().favorites
+				if (getStore().favorites.length == 0) {
 					getActions().addFav(name)
 				} else {
 					if (favNames.includes(name)) {
