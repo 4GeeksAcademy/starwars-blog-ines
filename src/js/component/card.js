@@ -21,7 +21,7 @@ noImageUrl = "https://starwars-visualguide.com/assets/img/big-placeholder.jpg"
 				src={noImageUrl !== "" ? noImageUrl : `https://starwars-visualguide.com/assets/img/${category}/${props.item.uid}.jpg`}
 				alt="image"
 			/>
-            <div className="card-body">
+            <div className="card-body bg-light">
                 <h5 className="card-title">{props.item.name}</h5>
                 <p className="card-text mb-0"> {
                     props.category == "people" ? "Gender: " : 
@@ -43,7 +43,7 @@ noImageUrl = "https://starwars-visualguide.com/assets/img/big-placeholder.jpg"
                         <button className="btn text-primary border-primary">Learn More!</button>
                     </Link>
                     
-                    <button className={`corazon btn btn-outline-warning`} onClick={() => actions.favorites(props.item.name)}>
+                    <button className={`corazon btn btn-outline-warning`} onClick={() => actions.addFav(props.item.name)}>
                         <i className={`fa-heart ${isFavorite ? "fas text-warning" : "far"}`}></i>
                     </button>
                     

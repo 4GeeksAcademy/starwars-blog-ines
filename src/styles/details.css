@@ -1,6 +1,7 @@
 .imageDetails {
-    height: 400px;
-    width: 400px;
+    height: 415px;
+    width: 500px;
     object-fit: cover;
     object-position: top;
 }
+

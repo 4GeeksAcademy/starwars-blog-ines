@@ -20,25 +20,25 @@ export const Details = () => {
 	}, []);
 
     return (
-		<div>
-			<div className="d-flex rounded-2 ms-5">
-				<div className="mt-1 mb-5">
-					<img className="imageDetails"
+		<div className="principal bg-dark">
+			<div className="d-flex ms-3 me-1">
+				<div className="mt-3">
+					<img className="imageDetails border-end border-danger border-2 rounded-start"
 						src={noImageUrl !== "" ? noImageUrl : `https://starwars-visualguide.com/assets/img/${category}/${params.uid}.jpg`}
 						alt="image"
 					/>
 				</div>
-				<div className="text-center w-100 mt-3">
-					<h1 className="ms-3">{store.details.name}</h1>
+				<div className="w-75 mt-3 bg-secondary bg-opacity-25 me-2 text-white rounded-end">
+					<h1 className="ms-3">{store.details.name?.toUpperCase()}</h1>
 					<p className="ms-3">{store.details.description}</p>
 				</div>
 			</div>
-			<div className="d-flex justify-content-between text-danger ms-5 border-top border-danger border-2">
-				<div className="mt-4 ms-5">
-					<h6> {
-						params.category == "people" ? "Name" :
-						params.category == "planets" ? "Climate" :
-						params.category == "vehicles" ? "Crew" : ""
+			<div className="d-flex d-flex text-danger text-primary text-opacity-50 pb-2">
+				<div className="mt-4 border-end border-secondary border-2 ps-4 pe-5">
+					<h6 className="text-white"> {
+						params.category == "people" ? "NAME" :
+						params.category == "planets" ? "CLIMATE" :
+						params.category == "vehicles" ? "CREW" : ""
 					}</h6>
 					<p> {
 						params.category == "people" ? store.details.name:
@@ -46,11 +46,11 @@ export const Details = () => {
 						params.category == "vehicles" ? store.details.crew : ""
 					}</p>
 				</div>
-				<div className="mt-4 ms-3">
-					<h6> {
-						params.category == "people" ? "Birth Year" :
-						params.category == "planets" ? "Diameter" :
-						params.category == "vehicles" ? "Model" : ""
+				<div className="mt-4 border-end border-secondary border-2 ps-3 pe-5">
+					<h6 className="text-white"> {
+						params.category == "people" ? "BIRTH YEAR" :
+						params.category == "planets" ? "DIAMETER" :
+						params.category == "vehicles" ? "MODEL" : ""
 					}</h6>
 					<p> {
 						params.category == "people" ? store.details.birth_year:
@@ -58,11 +58,11 @@ export const Details = () => {
 						params.category == "vehicles" ? store.details.model : ""
 					}</p>
 				</div>
-				<div className="mt-4 ms-3">
-					<h6> {
-						params.category == "people" ? "Gender" :
-						params.category == "planets" ? "Terrain" :
-						params.category == "vehicles" ? "Manufacturer" : ""
+				<div className="mt-4 border-end border-secondary border-2 ps-3 pe-5">
+					<h6 className="text-white"> {
+						params.category == "people" ? "GENDER" :
+						params.category == "planets" ? "TERRAIN" :
+						params.category == "vehicles" ? "MANUFACTURER" : ""
 					}</h6>
 					<p> {
 						params.category == "people" ? store.details.gender:
@@ -70,23 +70,23 @@ export const Details = () => {
 						params.category == "vehicles" ? store.details.manufacturer : ""
 					}</p>
 				</div>
-				<div className="mt-4 ms-3">
-					<h6> {
-						params.category == "people" ? "Height" :
-						params.category == "planets" ? "Climate" :
-						params.category == "vehicles" ? "Lenght" : ""
+				<div className="mt-4 border-end border-secondary border-2 ps-3 pe-5">
+					<h6 className="text-white"> {
+						params.category == "people" ? "HEIGTH" :
+						params.category == "planets" ? "ORBITAL PERIOD" :
+						params.category == "vehicles" ? "LENGTH" : ""
 					}</h6>
 					<p> {
 						params.category == "people" ? store.details.height:
-						params.category == "planets" ? store.details.climate :
-						params.category == "vehicles" ? store.details.lenght : ""
+						params.category == "planets" ? store.details.orbital_period :
+						params.category == "vehicles" ? store.details.length : ""
 					}</p>
 				</div>
-				<div className="mt-4 ms-3">
-					<h6> {
-						params.category == "people" ? "Skin Color" :
-						params.category == "planets" ? "Population" :
-						params.category == "vehicles" ? "Passengers" : ""
+				<div className="mt-4 border-end border-secondary border-2 ps-3 pe-5">
+					<h6 className="text-white"> {
+						params.category == "people" ? "SKIN COLOR" :
+						params.category == "planets" ? "POPULATION" :
+						params.category == "vehicles" ? "PASSENGERS" : ""
 					}</h6>
 					<p> {
 						params.category == "people" ? store.details.skin_color:
@@ -94,16 +94,40 @@ export const Details = () => {
 						params.category == "vehicles" ? store.details.passengers : ""
 					}</p>
 				</div>
-				<div className="mt-4 ms-3 me-2 me-5">
-					<h6> {
-						params.category == "people" ? "Eyer Color" :
-						params.category == "planets" ? "Gravity" :
-						params.category == "vehicles" ? "Consumables" : ""
+				<div className="mt-4 border-end border-secondary border-2 ps-3 pe-5">
+					<h6 className="text-white"> {
+						params.category == "people" ? "EYE COLOR" :
+						params.category == "planets" ? "GRAVITY" :
+						params.category == "vehicles" ? "CONSUMABLES" : ""
 					}</h6>
 					<p> {
 						params.category == "people" ? store.details.eye_color:
 						params.category == "planets" ? store.details.gravity :
 						params.category == "vehicles" ? store.details.consumables : ""
+					}</p>
+				</div>
+				<div className="mt-4 border-end border-secondary border-2 ps-3 pe-5">
+					<h6 className="text-white"> {
+						params.category == "people" ? "EDITED" :
+						params.category == "planets" ? "EDITED" :
+						params.category == "vehicles" ? "EDITED" : ""
+					}</h6>
+					<p> {
+						params.category == "people" ? store.details.edited:
+						params.category == "planets" ? store.details.edited :
+						params.category == "vehicles" ? store.details.edited : ""
+					}</p>
+				</div>
+				<div className="mt-4 ps-3 pe-5">
+					<h6 className="text-white"> {
+						params.category == "people" ? "CREATED" :
+						params.category == "planets" ? "CREATED" :
+						params.category == "vehicles" ? "CREATED" : ""
+					}</h6>
+					<p> {
+						params.category == "people" ? store.details.created:
+						params.category == "planets" ? store.details.created :
+						params.category == "vehicles" ? store.details.created : ""
 					}</p>
 				</div>
 			</div>

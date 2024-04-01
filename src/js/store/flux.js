@@ -55,18 +55,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let newListFav = listFav.filter((item)=> name !== item )
 				setStore({favorites : newListFav})
 			},
-			favorites:(name) => {
-				let favNames = getStore().favorites
-				if (getStore().favorites.length == 0) {
-					getActions().addFav(name)
-				} else {
-					if (favNames.includes(name)) {
-						getActions().removeFav(name)
-					} else {
-						getActions().addFav(name)
-					}
-				}
-			}
 		}
 	};
 };
