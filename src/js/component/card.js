@@ -43,7 +43,7 @@ noImageUrl = "https://starwars-visualguide.com/assets/img/big-placeholder.jpg"
                         <button className="btn text-primary border-primary">Learn More!</button>
                     </Link>
                     
-                    <button className={`corazon btn btn-outline-warning`} onClick={() => actions.addFav(props.item.name)}>
+                    <button className={`corazon btn btn-outline-warning`} onClick={() => actions.favorites(props.item.name)}>
                         <i className={`fa-heart ${isFavorite ? "fas text-warning" : "far"}`}></i>
                     </button>
                     
